@@ -187,17 +187,19 @@
   <header>
     <h1>Linha do Tempo do Nazismo</h1>
     <nav>
-      <a href="#1918" id="link-1918">1918</a>
-      <a href="#1919" id="link-1919">1919</a>
-      <a href="#1920" id="link-1920">1920</a>
-      <a href="#1924" id="link-1924">1924</a>
-      <a href="#1929" id="link-1929">1929</a>
-      <a href="#1933" id="link-1933">1933</a>
-      <a href="#1934" id="link-1934">1934</a>
-      <a href="#1935" id="link-1935">1935</a>
-      <a href="#1939" id="link-1939">1939</a>
-      <a href="#1941" id="link-1941">1941</a>
-      <a href="#1945" id="link-1945">1945</a>
+      <a href="#1918">1918</a>
+      <a href="#1919">1919</a>
+      <a href="#1920">1920</a>
+      <a href="#1924">1924</a>
+      <a href="#1929">1929</a>
+      <a href="#1933">1933</a>
+      <a href="#1934">1934</a>
+      <a href="#1935">1935</a>
+      <a href="#1939">1939</a>
+      <a href="#1940">1940</a>
+      <a href="#1941">1941</a>
+      <a href="#1942">1942</a>
+      <a href="#1945">1945</a>
     </nav>
   </header>
 
@@ -287,12 +289,38 @@
       </div>
     </section>
 
+    <!-- NOVA SEÇÃO: 1940 - Regime de Vichy e Estados Fantoches -->
+    <section id="1940" class="anchor">
+      <h2>1940 - Regime de Vichy e Estados Fantoches</h2>
+      <p>Após a queda da França em <strong>junho de 1940</strong>, a Alemanha estabeleceu o <strong>Regime de Vichy</strong> no sul do país, liderado pelo marechal Philippe Pétain. Diferente de um mero fantoche, Vichy implementou políticas antissemitas de forma autônoma:</p>
+      <p><strong>• Leis de Vichy:</strong> O <em>Estatuto dos Judeus</em> (outubro 1940) excluiu judeus de cargos públicos antes mesmo de ordens alemãs.</p>
+      <p><strong>• Estados Satélites:</strong> A Croácia (Ustaše), Eslováquia (Tiso) e Noruega (Quisling) colaboraram ativamente no Holocausto e na repressão política.</p>
+      <div class="highlight">
+        <p><strong>Dado:</strong> 75 mil judeus franceses foram deportados com participação direta da polícia de Vichy, incluindo 13 mil detidos no <em>Velódromo de Inverno</em> (Paris, 1942).</p>
+      </div>
+    </section>
+
     <section id="1941" class="anchor">
       <h2>1941 - Início do Holocausto</h2>
       <p>Após a invasão da URSS em <strong>junho de 1941</strong>, os <strong>Einsatzgruppen</strong> (esquadrões da morte) executaram <strong>1,5 milhão de judeus</strong> em fuzilamentos em massa.</p>
       <p>Em <strong>20 de janeiro de 1942</strong>, a <strong>Conferência de Wannsee</strong> formalizou a <strong>Solução Final</strong>, planejando o extermínio sistemático em campos como Auschwitz-Birkenau. Até 1945, <strong>6 milhões de judeus</strong> foram assassinados, além de ciganos, homossexuais e dissidentes.</p>
       <div class="highlight">
         <p><strong>Industrialização do genocídio:</strong> O Holocausto representou a aplicação burocrática e industrial do antissemitismo nazista, tornando-se o maior crime da história moderna.</p>
+      </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: 1942 - Propaganda e Ciência Nazista -->
+    <section id="1942" class="anchor">
+      <h2>1942 - Propaganda e Ciência Nazista</h2>
+      <p><strong>1. Máquina de Propaganda:</strong> Joseph Goebbels intensificou a produção de:</p>
+      <p><strong>• Filmes como <em>O Judeu Eterno</em></strong> (1940), que retratava judeus como "parasitas globais".</p>
+      <p><strong>• Brinquedos antissemitas</strong> como o jogo de tabuleiro <em>Juden raus!</em> ("Fora judeus!").</p>
+      
+      <p><strong>2. Ciência do Terror:</strong></p>
+      <p><strong>• Foguetes V2:</strong> Desenvolvidos por Wernher von Braun usando trabalho escravo (20 mil mortos em Mittelwerk).</p>
+      <p><strong>• Experimentos médicos:</strong> Josef Mengele realizou atrocidades em Auschwitz em nome da "higiene racial".</p>
+      <div class="highlight">
+        <p><strong>Legado controverso:</strong> Cientistas como von Braun foram recrutados por EUA e URSS após a guerra, levantando debates éticos.</p>
       </div>
     </section>
 
@@ -306,16 +334,16 @@
     </section>
   </main>
 
+  <!-- RODAPÉ ORIGINAL PRESERVADO -->
   <footer>
     <p>&copy; 2025 - Linha do Tempo do Nazismo | Site desenvolvido por estudantes do 3 DS-B</p>
   </footer>
 
   <script>
-    // Função para adicionar o destaque visual ao link ativo
+    // JavaScript original preservado
     const links = document.querySelectorAll("nav a");
     const sections = document.querySelectorAll("section");
     
-    // Observador de interseção para destacar a seção visível
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -334,7 +362,6 @@
       observer.observe(section);
     });
 
-    // Adiciona evento de clique suave
     links.forEach(link => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -348,6 +375,5 @@
       });
     });
   </script>
-
 </body>
 </html>
