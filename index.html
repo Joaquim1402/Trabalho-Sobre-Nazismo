@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>História do Nazismo</title>
+  <title>Linha do Tempo do Nazismo</title>
   <style>
     /* Reset geral */
     * {
@@ -18,11 +18,12 @@
       background-color: #f8f9fa;
       color: #333;
       scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
-    /* Cabeçalho */
+    /* Cabeçalho com gradiente */
     header {
-      background-color: #343a40;
+      background: linear-gradient(135deg, #343a40 0%, #2c3e50 100%);
       color: white;
       padding: 1.5rem 2rem;
       position: sticky;
@@ -40,6 +41,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     /* Navegação */
@@ -57,18 +59,21 @@
       text-transform: uppercase;
       padding: 0.5rem 1rem;
       border-radius: 5px;
-      transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      background-color: rgba(0, 119, 204, 0.3);
     }
 
     nav a:hover {
-      color: #0077cc;
-      background-color: #e9ecef;
+      color: white;
+      background-color: rgba(0, 119, 204, 0.7);
+      transform: translateY(-2px);
     }
 
     nav a.active {
       background-color: #0077cc;
       color: white;
-      border: 3px solid #e9ecef;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     /* Seções de conteúdo */
@@ -89,10 +94,9 @@
 
     h2 {
       color: #0077cc;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-size: 1.8rem;
       font-weight: 600;
-      text-transform: capitalize;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid #0077cc;
       transition: border-color 0.3s ease;
@@ -100,7 +104,7 @@
 
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      margin-bottom: 1rem;
       color: #555;
     }
 
@@ -108,11 +112,24 @@
       scroll-margin-top: 80px;
     }
 
+    /* Destaque para informações importantes */
+    .highlight {
+      background-color: #f8f9fa;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+
     /* Rodapé */
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #343a40;
+      background: linear-gradient(135deg, #343a40 0%, #2c3e50 100%);
       color: white;
       margin-top: 2rem;
       border-top: 2px solid #0077cc;
@@ -122,6 +139,7 @@
       font-size: 1.2rem;
       font-weight: 400;
       color: #f8f9fa;
+      margin-bottom: 0;
     }
 
     footer a {
@@ -143,19 +161,23 @@
 
       nav {
         margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
       }
 
       nav a {
         font-size: 0.9rem;
-        margin: 0.5rem 0;
+        margin: 0.2rem;
+        padding: 0.4rem 0.8rem;
       }
 
       section {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        margin: 1.5rem auto;
       }
 
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -163,7 +185,7 @@
 <body>
 
   <header>
-    <h1>História do Nazismo</h1>
+    <h1>Linha do Tempo do Nazismo</h1>
     <nav>
       <a href="#1918" id="link-1918">1918</a>
       <a href="#1919" id="link-1919">1919</a>
@@ -182,77 +204,147 @@
   <main>
     <section id="1918" class="anchor">
       <h2>1918 - Fim da Primeira Guerra Mundial</h2>
-      <p>Com a derrota na Primeira Guerra, a Alemanha enfrentou uma grave crise. O Partido Nazista utilizou o sentimento de derrota e humilhação para impulsionar sua ideologia.</p>
+      <p>A rendição alemã em novembro de 1918 marcou o colapso do Império Alemão e o início de um período de caos político e social. A <strong>Revolução de Novembro</strong> (1918-1919) derrubou a monarquia e instaurou a <strong>República de Weimar</strong>, mas a derrota militar gerou um trauma coletivo.</p>
+      <p>A narrativa da <em>Dolchstoßlegende</em> ("punhalada nas costas"), difundida por elites militares e grupos de direita, culpou socialistas, comunistas e judeus pela derrota, alimentando o revanchismo. Esse mito tornou-se central na propaganda nazista, que o usou para justificar a necessidade de "purificação nacional".</p>
+      <div class="highlight">
+        <p><strong>Impacto:</strong> A humilhação da derrota criou o terreno fértil para o surgimento de movimentos extremistas como o Partido Nazista.</p>
+      </div>
     </section>
 
     <section id="1919" class="anchor">
       <h2>1919 - Tratado de Versalhes</h2>
-      <p>O tratado impôs pesadas sanções à Alemanha. O Partido Nazista usou o ressentimento popular para crescer, propondo a anulação do tratado.</p>
+      <p>Assinado em <strong>28 de junho de 1919</strong>, o tratado impôs à Alemanha sanções devastadoras. O <strong>Artigo 231</strong> atribuía ao país a <strong>culpa exclusiva pela guerra</strong>, legitimando reparações financeiras de <strong>132 bilhões de marcos-ouro</strong>, perdas territoriais (13% do território, incluindo Alsácia-Lorena para a França) e desmilitarização (limitação do exército a 100 mil homens).</p>
+      <p>O artigo tornou-se símbolo da "humilhação nacional", usado por Hitler no <em>Mein Kampf</em> para justificar o expansionismo e a revogação do tratado. A economia alemã entrou em colapso, com hiperinflação destruindo o marco em 1923, criando um terreno fértil para extremismos.</p>
+      <div class="highlight">
+        <p><strong>Artigo 231:</strong> Conhecido como a "cláusula de culpa de guerra", foi instrumentalizado pelos nazistas como prova da "traição" que justificava suas ações futuras.</p>
+      </div>
     </section>
 
     <section id="1920" class="anchor">
       <h2>1920 - Fundação do NSDAP</h2>
-      <p>O Partido dos Trabalhadores Alemães torna-se NSDAP. Adolf Hitler se junta ao partido, que passa a promover o nacionalismo radical e o antissemitismo.</p>
+      <p>Em <strong>24 de fevereiro de 1920</strong>, o <strong>Partido dos Trabalhadores Alemães (DAP)</strong> foi rebatizado como <strong>Partido Nacional-Socialista dos Trabalhadores Alemães (NSDAP)</strong>. Seu programa de 25 pontos, redigido por Hitler, combinava nacionalismo extremo, antissemitismo e revanchismo.</p>
+      <p>O programa exigia a unificação de todos os alemães em uma "Grande Alemanha", a revogação do Tratado de Versalhes e a exclusão de judeus da cidadania. A criação da <strong>SA</strong> (<em>Sturmabteilung</em>), milícia paramilitar, permitiu intimidar opositores e consolidar presença nas ruas.</p>
+      <div class="highlight">
+        <p><strong>Primeiros passos:</strong> O partido, inicialmente com menos de 60 membros, atraiu veteranos de guerra e descontentes com a crise, preparando o cenário para sua ascensão.</p>
+      </div>
     </section>
 
     <section id="1924" class="anchor">
       <h2>1924 - Mein Kampf</h2>
-      <p>Na prisão, Hitler escreve o livro que serve de base para a ideologia nazista, incluindo antissemitismo e expansionismo.</p>
+      <p>Durante sua prisão após o fracassado <strong>Putsch da Cervejaria (1923)</strong>, Hitler ditou <em>Mein Kampf</em> ("Minha Luta"), publicado em <strong>1925</strong>. O livro sistematizou a ideologia nazista em três pilares fundamentais:</p>
+      <p><strong>1. Racismo científico:</strong> Hierarquia de "raças" com a "ariana" no topo.</p>
+      <p><strong>2. Lebensraum ("espaço vital"):</strong> Necessidade de expansão territorial no Leste Europeu.</p>
+      <p><strong>3. Conspiração judaico-bolchevique:</strong> Judeus acusados de controlar o capitalismo e o comunismo.</p>
+      <div class="highlight">
+        <p><strong>Influência:</strong> A obra vendeu 12 milhões de cópias até 1945, tornando-se base doutrinária do partido e instrumento de propaganda do antissemitismo.</p>
+      </div>
     </section>
 
     <section id="1929" class="anchor">
       <h2>1929 - Crise Econômica</h2>
-      <p>A crise mundial impulsiona o nazismo, que se apresenta como solução para o caos econômico e social.</p>
+      <p>A <strong>Grande Depressão</strong> (1929) devastou a Alemanha: o desemprego atingiu <strong>6 milhões</strong> (30% da força de trabalho) em 1932, e o PIB caiu <strong>40%</strong>. A República de Weimar, já fragilizada, perdeu apoio popular.</p>
+      <p>O NSDAP capitalizou o desespero com slogans como <em>"Arbeit und Brot"</em> ("Trabalho e Pão"), prometendo emprego via rearmamento e obras públicas. Nas eleições de 1930, os nazistas saltaram de <strong>2,6% para 18,3% dos votos</strong>, tornando-se o segundo maior partido.</p>
+      <div class="highlight">
+        <p><strong>Ponto de virada:</strong> A crise econômica foi o catalisador que transformou o NSDAP de um partido marginal em uma força política majoritária.</p>
+      </div>
     </section>
 
     <section id="1933" class="anchor">
       <h2>1933 - Hitler no Poder</h2>
-      <p>Hitler é nomeado chanceler. O Parlamento é incendiado e direitos civis são suspensos. O nazismo começa a destruir a democracia.</p>
+      <p>Em <strong>30 de janeiro de 1933</strong>, Hitler foi nomeado chanceler por Paul von Hindenburg. Após o <strong>incêndio do Reichstag</strong> (27 de fevereiro), atribuído a comunistas, o <strong>Decreto do Incêndio</strong> suspendeu direitos civis.</p>
+      <p>Em março, a <strong>Lei Habilitante</strong> concedeu poderes ditatoriais a Hitler, iniciando a <em>Gleichschaltung</em> ("coordenação"): partidos rivais foram banidos, sindicatos dissolvidos e a <strong>Gestapo</strong> (polícia secreta) eliminou dissidências. Em julho, o NSDAP tornou-se o único partido legal.</p>
+      <div class="highlight">
+        <p><strong>Lei Habilitante:</strong> Aprovada em 23 de março de 1933, marcou o fim efetivo da democracia na Alemanha, permitindo a Hitler governar por decreto.</p>
+      </div>
     </section>
 
     <section id="1934" class="anchor">
       <h2>1934 - Noite das Facas Longas</h2>
-      <p>Purga dentro do Partido Nazista para eliminar rivais e consolidar o poder de Hitler com apoio do exército.</p>
+      <p>Entre <strong>30 de junho e 2 de julho de 1934</strong>, Hitler ordenou o expurgo da <strong>SA</strong>, liderada por Ernst Röhm, que defendia uma "segunda revolução" socialista e desafiava o exército regular.</p>
+      <p>Cerca de <strong>200 pessoas</strong>, incluindo Röhm e rivais conservadores, foram executadas pela <strong>SS</strong> de Himmler. O massacre consolidou a aliança entre Hitler e as elites militares, permitindo que ele assumisse o título de <strong>Führer</strong> após a morte de Hindenburg em agosto.</p>
+      <div class="highlight">
+        <p><strong>Significado:</strong> O evento marcou a eliminação da ala socialista do partido e a consolidação absoluta do poder de Hitler.</p>
+      </div>
     </section>
 
     <section id="1935" class="anchor">
       <h2>1935 - Leis de Nuremberg</h2>
-      <p>Leis que institucionalizam o racismo e retiram os direitos dos judeus. Base legal do Holocausto.</p>
+      <p>Promulgadas em <strong>15 de setembro de 1935</strong>, essas leis institucionalizaram o racismo de Estado:</p>
+      <p><strong>• Lei da Cidadania do Reich:</strong> Só "sangue alemão" garantia cidadania.</p>
+      <p><strong>• Lei para a Proteção do Sangue Alemão:</strong> Proibição de casamentos e relações sexuais entre judeus e não judeus.</p>
+      <p>Judeus foram excluídos da vida pública, perdendo direitos políticos e acesso a serviços. Essas leis pavimentaram o caminho para o Holocausto.</p>
+      <div class="highlight">
+        <p><strong>Radicalização:</strong> As Leis de Nuremberg marcaram a transição da perseguição informal para a discriminação legalizada contra os judeus.</p>
+      </div>
     </section>
 
     <section id="1939" class="anchor">
       <h2>1939 - Segunda Guerra Mundial</h2>
-      <p>A Alemanha invade a Polônia. O nazismo busca expansão territorial e domínio racial.</p>
+      <p>A invasão da Polônia em <strong>1º de setembro de 1939</strong>, sob o pretexto de recuperar territórios perdidos no Tratado de Versalhes, desencadeou a guerra. A estratégia nazista combinava <strong>Blitzkrieg</strong> ("guerra-relâmpago") com políticas genocidas.</p>
+      <p>No Leste Europeu, civis eslavos foram escravizados ou exterminados para criar <em>Lebensraum</em>. A aliança com a Itália e o Japão (Eixo) ampliou o conflito, mas a invasão da URSS (1941) marcou o início do declínio nazista.</p>
+      <div class="highlight">
+        <p><strong>Objetivo central:</strong> A guerra foi concebida como meio para conquistar "espaço vital" no Leste e implementar a "solução final" para a "questão judaica".</p>
+      </div>
     </section>
 
     <section id="1941" class="anchor">
       <h2>1941 - Início do Holocausto</h2>
-      <p>Começa a "solução final": extermínio sistemático dos judeus e outros grupos considerados indesejáveis.</p>
+      <p>Após a invasão da URSS em <strong>junho de 1941</strong>, os <strong>Einsatzgruppen</strong> (esquadrões da morte) executaram <strong>1,5 milhão de judeus</strong> em fuzilamentos em massa.</p>
+      <p>Em <strong>20 de janeiro de 1942</strong>, a <strong>Conferência de Wannsee</strong> formalizou a <strong>Solução Final</strong>, planejando o extermínio sistemático em campos como Auschwitz-Birkenau. Até 1945, <strong>6 milhões de judeus</strong> foram assassinados, além de ciganos, homossexuais e dissidentes.</p>
+      <div class="highlight">
+        <p><strong>Industrialização do genocídio:</strong> O Holocausto representou a aplicação burocrática e industrial do antissemitismo nazista, tornando-se o maior crime da história moderna.</p>
+      </div>
     </section>
 
     <section id="1945" class="anchor">
       <h2>1945 - Fim do Nazismo</h2>
-      <p>Com a derrota da Alemanha na guerra, o regime nazista colapsa. Seus líderes são julgados por crimes contra a humanidade.</p>
+      <p>Com o <strong>suicídio de Hitler</strong> em <strong>30 de abril de 1945</strong> e a rendição incondicional em <strong>8 de maio</strong>, o Terceiro Reich entrou em colapso.</p>
+      <p>Os <strong>Julgamentos de Nuremberg</strong> (1945-1946) condenaram líderes nazistas por crimes contra a humanidade. O NSDAP foi banido, e a <strong>desnazificação</strong> buscou erradicar a ideologia, embora seu legado persista em grupos neonazistas.</p>
+      <div class="highlight">
+        <p><strong>Legado:</strong> O nazismo serve como alerta permanente sobre os perigos do nacionalismo extremo, do racismo institucionalizado e da erosão das democracias.</p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - História do Nazismo | Site Educativo</p>
+    <p>&copy; 2025 - Linha do Tempo do Nazismo | Site Educativo sobre História</p>
   </footer>
 
   <script>
     // Função para adicionar o destaque visual ao link ativo
     const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
     
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        links.forEach(item => item.classList.remove("active"));
-        link.classList.add("active");
+    // Observador de interseção para destacar a seção visível
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          links.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
 
-        // Destacar o título da seção selecionada
-        const section = document.querySelector(link.getAttribute("href"));
-        const title = section.querySelector("h2");
-        title.style.borderColor = "#0077cc";
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Adiciona evento de clique suave
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetSection.offsetTop - 70,
+          behavior: "smooth"
+        });
       });
     });
   </script>
