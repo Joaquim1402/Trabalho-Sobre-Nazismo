@@ -49,24 +49,48 @@
       color: white;
       margin-top: 2rem;
     }
+    .range-container {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    input[type="range"] {
+      width: 200px;
+      appearance: none;
+      background: #ccc;
+      height: 8px;
+      border-radius: 5px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+    input[type="range"]:focus {
+      background: #0077cc;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0077cc;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 5px;
+    }
+    input[type="range"]:hover::-webkit-slider-thumb {
+      background: #005fa3;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>História do Nazismo</h1>
-    <nav>
-      <a href="#1918">1918</a>
-      <a href="#1919">1919</a>
-      <a href="#1920">1920</a>
-      <a href="#1924">1924</a>
-      <a href="#1929">1929</a>
-      <a href="#1933">1933</a>
-      <a href="#1934">1934</a>
-      <a href="#1935">1935</a>
-      <a href="#1939">1939</a>
-      <a href="#1941">1941</a>
-      <a href="#1945">1945</a>
-    </nav>
   </header>
 
   <main>
@@ -126,8 +150,27 @@
     </section>
   </main>
 
+  <div class="range-container">
+    <label for="timeline-range" style="color: white;">Escolha um ano:</label>
+    <input type="range" id="timeline-range" min="0" max="10" step="1" value="0" />
+  </div>
+
   <footer>
     <p>&copy; 2025 - História do Nazismo | Site educativo</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const range = document.getElementById('timeline-range');
+
+    const yearMap = [
+      '#1918', '#1919', '#1920', '#1924', '#1929', '#1933', '#1934', '#1935', '#1939', '#1941', '#1945'
+    ];
+
+    range.addEventListener('input', (e) => {
+      const sectionId = yearMap[e.target.value];
+      document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
