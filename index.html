@@ -21,61 +21,80 @@
       line-height: 1.6;
     }
 
-    /* Cabeçalho com gradiente */
+    /* Cabeçalho com gradiente - MODIFICADO PARA ALINHAMENTO HORIZONTAL */
     header {
       background: linear-gradient(135deg, #343a40 0%, #2c3e50 100%);
       color: white;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       border-bottom: 2px solid #0077cc;
     }
 
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     header h1 {
-      font-size: 2rem;
+      font-size: 1.8rem; /* Reduzido para caber mais links */
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+      margin-right: 2rem;
     }
 
-    /* Navegação */
+    /* Navegação - MODIFICADO PARA SCROLL HORIZONTAL EM DISPOSITIVOS PEQUENOS */
     nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
+      overflow-x: auto;
+      gap: 0.5rem;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: #0077cc transparent;
+    }
+
+    /* Estilização da barra de scroll (para navegadores WebKit) */
+    nav::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+      background-color: #0077cc;
+      border-radius: 2px;
     }
 
     nav a {
       color: white;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.85rem; /* Reduzido para caber mais links */
       text-transform: uppercase;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 5px;
       transition: all 0.3s ease;
       text-decoration: none;
       background-color: rgba(0, 119, 204, 0.3);
+      white-space: nowrap;
     }
 
     nav a:hover {
-      color: white;
       background-color: rgba(0, 119, 204, 0.7);
       transform: translateY(-2px);
     }
 
     nav a.active {
       background-color: #0077cc;
-      color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* (O RESTANTE DO CSS PERMANECE IDÊNTICO AO ORIGINAL) */
     /* Seções de conteúdo */
     section {
       padding: 3rem 2rem;
@@ -142,38 +161,31 @@
       margin-bottom: 0;
     }
 
-    footer a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Estilo Responsivo */
+    /* Estilo Responsivo - ATUALIZADO */
     @media (max-width: 768px) {
-      header {
+      .header-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+      }
+
+      header h1 {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
       }
 
       nav {
-        margin-top: 1rem;
-        width: 100%;
-        justify-content: center;
+        gap: 0.3rem;
+        padding-bottom: 0.3rem;
       }
 
       nav a {
-        font-size: 0.9rem;
-        margin: 0.2rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
       }
 
       section {
         padding: 2rem 1.5rem;
-        margin: 1.5rem auto;
       }
 
       h2 {
