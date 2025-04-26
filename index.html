@@ -5,92 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>História do Nazismo</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
       color: #333;
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
     header {
       background-color: #1a1a1a;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid #0077cc;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
+    header h1 {
+      font-size: 1.8rem;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #0077cc;
-      margin-top: 3rem;
-    }
-    .anchor {
-      scroll-margin-top: 80px;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #1a1a1a;
-      color: white;
-      margin-top: 2rem;
-    }
     .range-container {
-      position: fixed;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      background-color: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
     input[type="range"] {
-      width: 200px;
-      appearance: none;
-      background: #ccc;
+      width: 250px;
       height: 8px;
+      background: #ccc;
       border-radius: 5px;
       outline: none;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     input[type="range"]:focus {
       background: #0077cc;
     }
     input[type="range"]::-webkit-slider-thumb {
-      appearance: none;
       width: 20px;
       height: 20px;
       border-radius: 50%;
       background: #0077cc;
       cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 8px;
-      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
     input[type="range"]:hover::-webkit-slider-thumb {
       background: #005fa3;
     }
+    .year-display {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0077cc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background-color: white;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    h2 {
+      color: #0077cc;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      border-top: 2px solid #0077cc;
+    }
+    footer p {
+      font-size: 1rem;
+    }
+    .anchor {
+      scroll-margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .range-container {
+        margin-top: 1rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      main {
+        padding: 0 2rem;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>História do Nazismo</h1>
+    <div class="range-container">
+      <label for="timeline-range" style="color: white;">Escolha um ano:</label>
+      <input type="range" id="timeline-range" min="0" max="10" step="1" value="0" />
+      <span class="year-display" id="year-display">1918</span>
+    </div>
   </header>
 
   <main>
@@ -150,26 +194,31 @@
     </section>
   </main>
 
-  <div class="range-container">
-    <label for="timeline-range" style="color: white;">Escolha um ano:</label>
-    <input type="range" id="timeline-range" min="0" max="10" step="1" value="0" />
-  </div>
-
   <footer>
-    <p>&copy; 2025 - História do Nazismo | Site educativo</p>
+    <p>&copy; 2025 - História do Nazismo | Site Educativo</p>
   </footer>
 
   <script>
-    const sections = document.querySelectorAll('section');
     const range = document.getElementById('timeline-range');
-
+    const yearDisplay = document.getElementById('year-display');
     const yearMap = [
-      '#1918', '#1919', '#1920', '#1924', '#1929', '#1933', '#1934', '#1935', '#1939', '#1941', '#1945'
+      { year: 1918, id: '#1918' },
+      { year: 1919, id: '#1919' },
+      { year: 1920, id: '#1920' },
+      { year: 1924, id: '#1924' },
+      { year: 1929, id: '#1929' },
+      { year: 1933, id: '#1933' },
+      { year: 1934, id: '#1934' },
+      { year: 1935, id: '#1935' },
+      { year: 1939, id: '#1939' },
+      { year: 1941, id: '#1941' },
+      { year: 1945, id: '#1945' },
     ];
 
     range.addEventListener('input', (e) => {
-      const sectionId = yearMap[e.target.value];
-      document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+      const yearData = yearMap[e.target.value];
+      document.querySelector(yearData.id).scrollIntoView({ behavior: 'smooth' });
+      yearDisplay.textContent = yearData.year;
     });
   </script>
 </body>
