@@ -20,7 +20,7 @@
     header {
       background-color: #1a1a1a;
       color: white;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,6 +33,26 @@
     header h1 {
       font-size: 1.8rem;
       font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #0077cc;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #005fa3;
     }
     .range-container {
       display: flex;
@@ -123,6 +143,13 @@
       main {
         padding: 0 2rem;
       }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav a {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -130,11 +157,19 @@
 
   <header>
     <h1>História do Nazismo</h1>
-    <div class="range-container">
-      <label for="timeline-range" style="color: white;">Escolha um ano:</label>
-      <input type="range" id="timeline-range" min="0" max="10" step="1" value="0" />
-      <span class="year-display" id="year-display">1918</span>
-    </div>
+    <nav>
+      <a href="#1918">1918</a>
+      <a href="#1919">1919</a>
+      <a href="#1920">1920</a>
+      <a href="#1924">1924</a>
+      <a href="#1929">1929</a>
+      <a href="#1933">1933</a>
+      <a href="#1934">1934</a>
+      <a href="#1935">1935</a>
+      <a href="#1939">1939</a>
+      <a href="#1941">1941</a>
+      <a href="#1945">1945</a>
+    </nav>
   </header>
 
   <main>
@@ -198,28 +233,5 @@
     <p>&copy; 2025 - História do Nazismo | Site Educativo</p>
   </footer>
 
-  <script>
-    const range = document.getElementById('timeline-range');
-    const yearDisplay = document.getElementById('year-display');
-    const yearMap = [
-      { year: 1918, id: '#1918' },
-      { year: 1919, id: '#1919' },
-      { year: 1920, id: '#1920' },
-      { year: 1924, id: '#1924' },
-      { year: 1929, id: '#1929' },
-      { year: 1933, id: '#1933' },
-      { year: 1934, id: '#1934' },
-      { year: 1935, id: '#1935' },
-      { year: 1939, id: '#1939' },
-      { year: 1941, id: '#1941' },
-      { year: 1945, id: '#1945' },
-    ];
-
-    range.addEventListener('input', (e) => {
-      const yearData = yearMap[e.target.value];
-      document.querySelector(yearData.id).scrollIntoView({ behavior: 'smooth' });
-      yearDisplay.textContent = yearData.year;
-    });
-  </script>
 </body>
 </html>
