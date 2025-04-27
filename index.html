@@ -118,17 +118,8 @@
       color: #555;
     }
 
-    ul, ol {
-      margin-left: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
     .anchor {
-      scroll-margin-top: 100px;
+      scroll-margin-top: 100px; /* Ajuste para o cabeçalho fixo */
     }
 
     .highlight {
@@ -143,45 +134,6 @@
       font-style: italic;
     }
 
-    .data-viz {
-      background: #e9ecef;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      border: 1px solid #dee2e6;
-    }
-
-    .timeline {
-      border-left: 3px solid #0077cc;
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .timeline-event {
-      position: relative;
-      padding-bottom: 1.5rem;
-    }
-
-    .event-marker {
-      position: absolute;
-      left: -1.65rem;
-      top: 0.3rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #0077cc;
-      border: 3px solid white;
-      box-shadow: 0 0 0 2px #0077cc;
-    }
-
-    blockquote {
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #0077cc;
-      padding-left: 1rem;
-      margin: 1.5rem 0;
-    }
-
     /* Rodapé */
     footer {
       text-align: center;
@@ -193,19 +145,10 @@
     }
 
     footer p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 400;
       color: #f8f9fa;
-      margin-bottom: 0.5rem;
-    }
-
-    footer a {
-      color: #80c4ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      margin-bottom: 0;
     }
 
     /* Responsivo */
@@ -235,7 +178,7 @@
 <body>
 
   <header>
-    <h1>Nazismo: História e Legado</h1>
+    <h1>Linha do Tempo do Nazismo</h1>
     <nav>
       <a href="#1918">1918</a>
       <a href="#1919">1919</a>
@@ -250,12 +193,10 @@
       <a href="#1941">1941</a>
       <a href="#1942">1942</a>
       <a href="#1945">1945</a>
-      <a href="#legado">Legado</a>
     </nav>
   </header>
 
   <main>
-    <!-- Seções originais mantidas -->
     <section id="1918" class="anchor">
       <h2>1918 - Fim da Primeira Guerra Mundial</h2>
       <p>A rendição alemã em novembro de 1918 marcou o colapso do Império Alemão e o início de um período de caos político e social. A <strong>Revolução de Novembro</strong> (1918-1919) derrubou a monarquia e instaurou a <strong>República de Weimar</strong>, mas a derrota militar gerou um trauma coletivo.</p>
@@ -341,102 +282,58 @@
       </div>
     </section>
 
+    <!-- NOVA SEÇÃO: 1940 - Regime de Vichy e Estados Fantoches -->
     <section id="1940" class="anchor">
       <h2>1940 - Regime de Vichy e Estados Fantoches</h2>
       <p>Após a queda da França em <strong>junho de 1940</strong>, a Alemanha estabeleceu o <strong>Regime de Vichy</strong> no sul do país, liderado pelo marechal Philippe Pétain. Diferente de um mero fantoche, Vichy implementou políticas antissemitas de forma autônoma:</p>
       <p><strong>• Leis de Vichy:</strong> O <em>Estatuto dos Judeus</em> (outubro 1940) excluiu judeus de cargos públicos antes mesmo de ordens alemãs.</p>
-      <p><strong>• Estados Satélites:</strong> Como a <strong>Croácia Ustaše</strong> e a <strong>Eslováquia de Tiso</strong>, que colaboraram ativamente com o Holocausto, mas mantiveram certa autonomia interna.</p>
-      <p><strong>• Fantoches Diretos:</strong> Como a <strong>Noruega de Quisling</strong>, onde o governo era uma extensão direta da administração nazista.</p>
+      <p><strong>• Estados Satélites:</strong> A Croácia (Ustaše), Eslováquia (Tiso) e Noruega (Quisling) colaboraram ativamente no Holocausto e na repressão política.</p>
       <div class="highlight">
         <p><strong>Dado:</strong> 75 mil judeus franceses foram deportados com participação direta da polícia de Vichy, incluindo 13 mil detidos no <em>Velódromo de Inverno</em> (Paris, 1942).</p>
       </div>
     </section>
 
     <section id="1941" class="anchor">
-      <h2>1941 - Holocausto e Operação Barbarossa</h2>
-      <p>Com a <strong>Operação Barbarossa</strong> (22 de junho 1941), a Alemanha invadiu a URSS. Os <strong>Einsatzgruppen</strong> (esquadrões da morte) iniciaram:</p>
-      <ul>
-        <li><strong>Fuzilamentos em massa:</strong> 1.3 milhão de judeus executados até 1943</li>
-        <li><strong>Primeiros campos de extermínio:</strong> Chelmno (dezembro 1941) com câmaras de gás móveis</li>
-        <li><strong>T4 Program:</strong> Extermínio de 300 mil pessoas com deficiência</li>
-      </ul>
-      
-      <div class="data-viz">
-        <h3>Vítimas do Holocausto por Grupo (1941-1945)</h3>
-        <div class="timeline">
-          <div class="timeline-event">
-            <div class="event-marker"></div>
-            <div class="event-content"><strong>Judeus:</strong> 6 milhões</div>
-          </div>
-          <div class="timeline-event">
-            <div class="event-marker"></div>
-            <div class="event-content"><strong>Ciganos:</strong> 220-500 mil</div>
-          </div>
-          <div class="timeline-event">
-            <div class="event-marker"></div>
-            <div class="event-content"><strong>Testemunhas de Jeová:</strong> 1.900</div>
-          </div>
-        </div>
+      <h2>1941 - Início do Holocausto</h2>
+      <p>Após a invasão da URSS em <strong>junho de 1941</strong>, os <strong>Einsatzgruppen</strong> (esquadrões da morte) executaram <strong>1,5 milhão de judeus</strong> em fuzilamentos em massa.</p>
+      <p>Em <strong>20 de janeiro de 1942</strong>, a <strong>Conferência de Wannsee</strong> formalizou a <strong>Solução Final</strong>, planejando o extermínio sistemático em campos como Auschwitz-Birkenau. Até 1945, <strong>6 milhões de judeus</strong> foram assassinados, além de ciganos, homossexuais e dissidentes.</p>
+      <div class="highlight">
+        <p><strong>Industrialização do genocídio:</strong> O Holocausto representou a aplicação burocrática e industrial do antissemitismo nazista, tornando-se o maior crime da história moderna.</p>
       </div>
     </section>
 
+    <!-- NOVA SEÇÃO: 1942 - Propaganda e Ciência Nazista -->
     <section id="1942" class="anchor">
-      <h2>1942 - A Máquina de Morte</h2>
-      <p><strong>Conferência de Wannsee</strong> (20 de janeiro):</p>
-      <ul>
-        <li>Planejamento industrial do extermínio com participação de 15 altos funcionários</li>
-        <li>Sistema de campos:
-          <ul>
-            <li><strong>Auschwitz-Birkenau:</strong> 1.1 milhão de mortos</li>
-            <li><strong>Treblinka:</strong> 900 mil mortos em 15 meses</li>
-          </ul>
-        </li>
-      </ul>
+      <h2>1942 - Propaganda e Ciência Nazista</h2>
+      <p><strong>1. Máquina de Propaganda:</strong> Joseph Goebbels intensificou a produção de:</p>
+      <p><strong>• Filmes como <em>O Judeu Eterno</em></strong> (1940), que retratava judeus como "parasitas globais".</p>
+      <p><strong>• Brinquedos antissemitas</strong> como o jogo de tabuleiro <em>Juden raus!</em> ("Fora judeus!").</p>
       
-      <blockquote>
-        "O extermínio em massa tornou-se um processo burocrático - assinavam-se formulários como se fossem pedidos de material de escritório" - Hannah Arendt
-      </blockquote>
+      <p><strong>2. Ciência do Terror:</strong></p>
+      <p><strong>• Foguetes V2:</strong> Desenvolvidos por Wernher von Braun usando trabalho escravo (20 mil mortos em Mittelwerk).</p>
+      <p><strong>• Experimentos médicos:</strong> Josef Mengele realizou atrocidades em Auschwitz em nome da "higiene racial".</p>
+      <div class="highlight">
+        <p><strong>Legado controverso:</strong> Cientistas como von Braun foram recrutados por EUA e URSS após a guerra, levantando debates éticos.</p>
+      </div>
     </section>
 
     <section id="1945" class="anchor">
       <h2>1945 - Fim do Nazismo</h2>
       <p>Com o <strong>suicídio de Hitler</strong> em <strong>30 de abril de 1945</strong> e a rendição incondicional em <strong>8 de maio</strong>, o Terceiro Reich entrou em colapso.</p>
       <p>Os <strong>Julgamentos de Nuremberg</strong> (1945-1946) condenaram líderes nazistas por crimes contra a humanidade. O NSDAP foi banido, e a <strong>desnazificação</strong> buscou erradicar a ideologia, embora seu legado persista em grupos neonazistas.</p>
-      
-      <div class="data-viz">
-        <h3>Resultado dos Julgamentos de Nuremberg</h3>
-        <ul>
-          <li><strong>12 condenações à morte</strong> (Goering, Ribbentrop)</li>
-          <li><strong>7 penas de prisão</strong> (Hess: prisão perpétua)</li>
-          <li><strong>3 absolvições</strong></li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="legado" class="anchor">
-      <h2>Legado Histórico</h2>
-      <p><strong>Impacto duradouro:</strong></p>
-      <ul>
-        <li>Criação do <strong>Tribunal Penal Internacional</strong> (2002)</li>
-        <li>Princípio de <em>"Never Again"</em> na política internacional</li>
-        <li>45% dos alemães em 2023 consideram o Holocausto o evento mais importante a ser lembrado (pesquisa Arolsen Archives)</li>
-      </ul>
-      
       <div class="highlight">
-        <p><strong>Desafios atuais:</strong> 63% dos jovens norte-americanos não sabem que 6 milhões de judeus foram mortos (Claims Conference, 2020)</p>
+        <p><strong>Legado:</strong> O nazismo serve como alerta permanente sobre os perigos do nacionalismo extremo, do racismo institucionalizado e da erosão das democracias.</p>
       </div>
-      
-      <blockquote>
-        "Aquele que não recorda a história está condenado a repeti-la" - George Santayana
-      </blockquote>
     </section>
   </main>
 
+  <!-- RODAPÉ ORIGINAL PRESERVADO -->
   <footer>
     <p>&copy; 2025 - Linha do Tempo do Nazismo | Site desenvolvido por estudantes do 3 DS-B</p>
   </footer>
 
   <script>
+    // JavaScript original preservado
     const links = document.querySelectorAll("nav a");
     const sections = document.querySelectorAll("section");
     
@@ -446,7 +343,7 @@
           const id = entry.target.getAttribute("id");
           links.forEach(link => {
             link.classList.remove("active");
-            if (link.getAttribute("href") === `#${id}`) {
+            if (link.getAttribute("href") === #${id}) {
               link.classList.add("active");
             }
           });
