@@ -21,7 +21,7 @@
       line-height: 1.6;
     }
 
-    /* CABEÇALHO */
+    /* CABEÇALHO REFORMULADO */
     header {
       background: linear-gradient(135deg, #343a40 0%, #2c3e50 100%);
       color: white;
@@ -34,6 +34,7 @@
       text-align: center;
     }
 
+    /* Título em formato de escadinha */
     header h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -45,6 +46,7 @@
       display: inline-block;
     }
 
+    /* Efeito escadinha */
     header h1::after {
       content: "";
       display: block;
@@ -54,7 +56,7 @@
       margin: 0.5rem auto 0;
     }
 
-    /* Navegação */
+    /* Navegação centralizada */
     nav {
       display: flex;
       justify-content: center;
@@ -85,7 +87,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Seções */
+    /* Seções de conteúdo */
     section {
       padding: 3rem 2rem;
       margin: 2rem auto;
@@ -94,7 +96,6 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      scroll-margin-top: 100px; /* Corrige o alinhamento ao rolar */
     }
 
     section:hover {
@@ -111,12 +112,35 @@
       border-bottom: 2px solid #0077cc;
     }
 
-    /* Elementos especiais */
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    ul, ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .anchor {
+      scroll-margin-top: 100px;
+    }
+
     .highlight {
       background-color: #f8f9fa;
       border-left: 4px solid #0077cc;
       padding: 1rem;
       margin: 1.5rem 0;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+      font-style: italic;
     }
 
     .data-viz {
@@ -125,6 +149,29 @@
       border-radius: 8px;
       margin: 1.5rem 0;
       border: 1px solid #dee2e6;
+    }
+
+    .timeline {
+      border-left: 3px solid #0077cc;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .timeline-event {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .event-marker {
+      position: absolute;
+      left: -1.65rem;
+      top: 0.3rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #0077cc;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #0077cc;
     }
 
     blockquote {
@@ -145,6 +192,22 @@
       border-top: 2px solid #0077cc;
     }
 
+    footer p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #f8f9fa;
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: #80c4ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     /* Responsivo */
     @media (max-width: 768px) {
       header h1 {
@@ -153,9 +216,14 @@
       
       nav {
         gap: 0.5rem;
-        justify-content: flex-start;
         overflow-x: auto;
         padding-bottom: 0.5rem;
+        justify-content: flex-start;
+      }
+      
+      nav a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
       }
       
       section {
@@ -165,8 +233,9 @@
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Linha do Tempo do Nazismo</h1>
+    <h1>Nazismo: História e Legado</h1>
     <nav>
       <a href="#1918">1918</a>
       <a href="#1919">1919</a>
@@ -184,7 +253,6 @@
       <a href="#legado">Legado</a>
     </nav>
   </header>
-
 
   <main>
     <!-- Seções originais mantidas -->
@@ -369,53 +437,37 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('header');
-      const navLinks = document.querySelectorAll('nav a');
-      const sections = document.querySelectorAll('section');
-      const headerHeight = header.offsetHeight;
-
-      // Configuração do IntersectionObserver
-      const observerOptions = {
-        root: null,
-        rootMargin: `-${headerHeight}px 0px 0px 0px`,
-        threshold: 0.3
-      };
-
-      // Ativa links conforme a seção visível
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }, observerOptions);
-
-      // Navegação suave
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          
-          if (targetSection) {
-            window.scrollTo({
-              top: targetSection.offsetTop - headerHeight,
-              behavior: 'smooth'
-            });
-          }
-        });
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          links.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active");
+            }
+          });
+        }
       });
+    }, { threshold: 0.5 });
 
-      // Observa todas as seções
-      sections.forEach(section => {
-        observer.observe(section);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetSection.offsetTop - 70,
+          behavior: "smooth"
+        });
       });
     });
   </script>
